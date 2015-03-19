@@ -83,7 +83,7 @@ class Arena {
 			if($player->hasPermission("sg.perks.join-full")) { // Players who have the correct permissions can join even when arenas are full.
 				$m = count($this->players);
 				$kick = array_keys($this->players)[rand(0, $m - 1)];
-				$this->kickPlayer($this->players[$kick]["obj"], "Making space for " . $player->getName());
+				$this->kickPlayer($this->players[$kick]["obj"], "Освобождение место для " . $player->getName());
 			}else{
 				return false;
 			}
@@ -131,7 +131,7 @@ class Arena {
 	}
 
 	public function kickPlayer(Player $player, $reason) {
-		$player->sendMessage("You've been kicked from the game. Reason: " . $reason . ".");
+		$player->sendMessage("Вас выбросили с игры по пречине: " . $reason . ".");
 		$this->removePlayer($player);
 	}
 	
