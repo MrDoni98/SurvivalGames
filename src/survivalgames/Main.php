@@ -26,7 +26,7 @@ class Main extends PluginBase {
 			if(isset($this->commandMap[$args[0]])) {
 				$displayUsage = !$this->commandMap[$args[0]]->execute($sender, $args[0], array_slice($args, 1));
 				if($displayUsage) {
-					$sender->sendMessage("Usage: " . str_replace("sg", $label, $command->getUsage()));
+					$sender->sendMessage("Используйте: " . str_replace("sg", $label, $command->getUsage()));
 				}
 			}
 		}
